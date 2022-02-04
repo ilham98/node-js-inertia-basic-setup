@@ -1,0 +1,44 @@
+{
+  "development": {
+    "username": "ilham_dev",
+    "password": "iniUSERdev!",
+    "database": "database_development",
+    "host": "localhost",
+    "dialect": "mssql",
+    "dialectOptions": {
+      "options": {
+        "useUTC": false,
+        "dateFirst": 1
+      }
+    },
+    "logging": false
+  },
+  "test": {
+    "username": "root",
+    "password": null,
+    "database": "database_test",
+    "host": "localhost",
+    "dialect": "mssql",
+    "dialectOptions": {
+      "options": {
+        "useUTC": false,
+        "dateFirst": 1
+      }
+    },
+    "logging": false
+  },
+  "production": {
+    "username": "root",
+    "password": null,
+    "database": "database_production",
+    "host": "localhost",
+    "dialect": "mssql",
+    "dialectOptions": {
+      "options": {
+        "useUTC": false,
+        "dateFirst": 1
+      }
+    },
+    "logging": false
+  }
+}

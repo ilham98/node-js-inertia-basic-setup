@@ -1,20 +1,31 @@
 {
   "scripts": {
-    "watch": "mix watch"
+    "dev": "nodemon --watch server index.js",
+    "watch": "mix watch",
+    "db:migrate": "cd server && npx sequelize-cli db:migrate",
+    "migrate:undo": "cd server && npx sequelize-cli db:migrate:undo"
   },
   "dependencies": {
     "@inertiajs/inertia": "^0.11.0",
     "@inertiajs/inertia-react": "^0.8.0",
+    "body-parser": "^1.19.1",
+    "connect-flash": "^0.1.1",
+    "cookie-parser": "^1.4.6",
     "express": "^4.17.2",
+    "express-session": "^1.17.2",
     "inertia-node": "^2.0.0",
     "react": "^17.0.2",
-    "react-dom": "^17.0.2"
+    "react-dom": "^17.0.2",
+    "react-hook-form": "^7.26.0",
+    "sequelize": "^6.15.0",
+    "tedious": "^6.0.0"
   },
   "devDependencies": {
     "@babel/preset-react": "^7.16.7",
     "laravel-mix": "^6.0.41",
     "resolve-url-loader": "^5.0.0",
     "sass": "^1.49.7",
-    "sass-loader": "^12.1.0"
+    "sass-loader": "^12.1.0",
+    "sequelize-cli": "^6.4.1"
   }
 }
