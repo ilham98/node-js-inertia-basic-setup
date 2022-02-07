@@ -9,17 +9,17 @@ const Home = (props) => {
   const onDashboardClick = () => {
     Inertia.get("/dashboard", {});
   };
-  const { username } = usePage().props;
-  console.log(username);
+  const { user } = usePage().props;
   return (
     <div>
-      {!username ? (
+      {!user ? (
         <>
           <Link href="/login">Login</Link>
           <Link href="/register">Register</Link>
         </>
       ) : (
         <div>
+          <h1>Welcome {user.username}!</h1>
           <button onClick={onDashboardClick}>Dashboard</button>
           <button onClick={onLogoutClick}>Logout</button>
         </div>

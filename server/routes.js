@@ -1,6 +1,6 @@
 const express = require("express");
 const router = express.Router();
-const { User } = require("./models");
+const { User, Book } = require("./models");
 
 function checkSignIn(req, res, next) {
   if (req.session?.user) {
@@ -28,14 +28,13 @@ router.post("/login", async (req, res) => {
   const { username, password } = req.body;
   const user = await User.findOne({
     where: { username, password },
+    include: Book,
   });
   if (!user) {
     req.flash("errorMessage", "Incorrect username or password");
     return req.Inertia.redirect("/login");
   }
-  req.session.user = {
-    userId: user.id,
-  };
+  req.session.user = user;
   return req.Inertia.redirect("/");
 });
 
